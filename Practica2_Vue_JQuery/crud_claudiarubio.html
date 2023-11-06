@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD_claudiarubio</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <!-- Javascript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+    <!--jquery-->
+    <script type="text/javascript" src="script/jquery-3.6.3.min.js"></script>
+    <!--favicon-->
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+</head>
+
+<body>
+    <div class="container-fluid bg-primary bg-opacity-10" style="min-width: 700px;">
+        <div id="contenedor" >
+            <!--header-->
+            <div id="cabecera">
+                <h1 class="text-center bg-primary pt-3 pb-3 text-uppercase">Inventario de coches Hot Wheels</h1>
+            </div>
+            <!--seccion informativa-->
+            <div class="text-center my-2">
+                <div class="d-flex justify-content-center">
+                    <img class="mx-2" src="img/logo.png" height="30">
+                    <h4 class="text-primary text-uppercase">Registro de coches</h4>
+                </div>
+                <p>Cumplimentar los siguientes campos para registrar un nuevo coche:</p>
+                <!--div para mostrar mensajes-->
+                <div id="oculto" class="alert alert-primary d-flex d-none align-items-center justify-content-center"
+                    role="alert">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                        class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img"
+                        aria-label="Warning:">
+                        <path
+                            d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+                    </svg>
+                    <div id="mensajes">
+                    </div>
+                </div>
+            </div>
+            <!--formulario-->
+            <form method="post" action="">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 col-sm-12">
+                        <div class="input-group mb-2">
+                            <div class="form-floating">
+                                <input type="text" class="form-control " id="modelo" placeholder="Modelo del coche">
+                                <label for="floatingPassword">Modelo del coche</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12">
+                        <div class="input-group mb-2">
+                            <select class="form-select mt-2 " id="serie">
+                                <option value="sinseleccion" selected>Serie del coche</option>
+                                <option value="Vintage">Vintage</option>
+                                <option value="Moderno">Moderno</option>
+                                <option value="Actual">Actual</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12">
+                        <div class="input-group mb-2">
+                            <div class="form-floating">
+                                <input type="number" class="form-control" id="precio" min="1" max="10"
+                                    placeholder="Valor unitario (EUR)">
+                                <label for="floatingPassword">Valor unitario (EUR)</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12">
+                        <div class="input-group mb-2">
+                            <div class="form-floating">
+                                <input type="number" class="form-control " id="cantidad" min="1" max="10"
+                                    placeholder="Cantidad">
+                                <label for="floatingPassword">Cantidad</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <!--boton registro-->
+            <div class="row">
+                <div class="col">
+                    <div class="d-flex justify-content-end">
+                        <input class="btn btn-primary" id="registrar" type="submit" value="Registrar">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="d-flex justify-content-start">
+                        <input class="btn btn-primary" id="actualizar" type="submit" value="Actualizar" disabled>
+                    </div>
+                </div>
+            </div>
+            <!--listado tabla para los datos-->
+            <div id="listado" class="text-center border border-primary rounded border-3 mx-2 mt-2">
+                <p>Listado de coches inventariados. Pulse para eliminar o modificar</p>
+            </div>
+            <!--footer-->
+            <div>
+                <h5 class="text-center bg-primary mt-2 pt-2 pb-2">Claudia Rubio &copy; Todos los derechos reservados
+                </h5>
+            </div>
+
+            <script type="text/javascript" src="script/crud_validaciones.js"></script>
+            <script type="text/javascript" src="script/crud_indexedDB.js"></script>
+
+        </div>
+    </div>
+</body>
+
+</html>
